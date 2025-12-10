@@ -20,6 +20,12 @@ public class VariableAndTypes {
         sb2.append("Man");
         System.out.println("sb1 = "+ sb1);
         System.out.println("sb2 = "+ sb2);
-
+        change(new StringBuilder("Hi!"));
+    }
+    static void change(StringBuilder sb) {
+        sb.append(" HHH"); // modifies same object
+        System.out.println("sb = "+ sb);
+        sb = new StringBuilder("Reassigned"); // has no effect on caller
+        System.out.println("sb = "+ sb);
     }
 }

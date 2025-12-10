@@ -24,5 +24,6 @@ public class AutoboxingPitfalls {
             System.out.println("Auto-unboxing from null lead to: " +e);
         }
         //Converting from Primitive to Wrapper is Auto-boxing and vice versa is auto-unboxing.
+        //JVM automatically converts primitive <-> wrapper
     }
 }
