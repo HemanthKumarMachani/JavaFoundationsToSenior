@@ -1,4 +1,5 @@
-Core Java: Memory, References, Wrappers, Equality & Immutability
+Core Java: Memory, References, Wrappers, Equality, Immutability & Interview perspective tips
+
 Purpose of this document
 
 This document consolidates core Java concepts that are heavily tested in interviews and OCP exams, and are frequently misunderstood even by experienced developers.
