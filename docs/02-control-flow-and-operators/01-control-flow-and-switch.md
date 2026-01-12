@@ -26,3 +26,35 @@ Example:
 if (a > 0 && expensiveCheck()) {
     // expensiveCheck() only runs if a > 0
 }
+```
+- Short-circuit behavior:
+  -	&& → stops if left side is false
+  -	|| → stops if left side is true
+
+- Why this matters:
+  - Prevents unnecessary computation
+  - Prevents NullPointerException in many cases
+
+## 3. Legacy switch (Before Java 12)
+
+- Legacy switch is a statement, not an expression.
+
+  - Supported types:
+  •	byte, short, char, int
+  •	enum
+  •	String (Java 7+)
+
+Example:
+
+```java
+switch (day) {
+        case 1:
+result = "Monday";
+        break;
+        case 2:
+result = "Tuesday";
+        break;
+default:
+result = "Unknown";
+        }
+```
