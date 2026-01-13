@@ -48,13 +48,36 @@ Example:
 
 ```java
 switch (day) {
-        case 1:
+      case 1:
 result = "Monday";
-        break;
-        case 2:
+      break;
+      case 2:
 result = "Tuesday";
-        break;
+      break;
 default:
 result = "Unknown";
-        }
+      }
 ```
+## Fall-through behavior (common interview trap)
+```java
+switch (x) {
+      case 1:
+      System.out.println("One");
+      case 2:
+          System.out.println("Two");
+}
+```
+- Why?
+  - Missing break causes execution to continue
+  - This behavior is intentional but error-prone
+
+## 4. Modern switch expression (Java 12+)
+
+Modern switch is an expression, not just a statement.
+
+Key improvements:
+•	Arrow syntax (->)
+•	No accidental fall-through
+•	Can return values
+•	Cleaner and safer
+
