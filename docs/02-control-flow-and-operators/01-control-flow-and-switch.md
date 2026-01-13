@@ -75,9 +75,38 @@ switch (x) {
 
 Modern switch is an expression, not just a statement.
 
-Key improvements:
+- Key improvements:
 •	Arrow syntax (->)
 •	No accidental fall-through
 •	Can return values
 •	Cleaner and safer
+```java
+String result =switch (x) {
+      case 1 -> "Monday";
+      case 2 -> "Tuesday";
+      case 3 -> "Wednesday";
+      default -> "Unknown"; 
+};
+```
+Important rules:
+•	Every possible path must return a value
+•	Compiler enforces exhaustiveness
+
+## 5. Why modern switch was introduced
+
+- Problems with legacy switch:
+•	Easy to forget break
+•	Harder to read
+•	Error-prone in large blocks
+
+- Modern switch advantages:
+•	Safer control flow
+•	Expression-based design
+•	Less boilerplate
+•	Better compiler checks
+
+## Interview one-liner:
+
+- Modern switch eliminates fall-through bugs and allows switch to be used as a value-producing expression.
+
 
