@@ -109,4 +109,64 @@ Important rules:
 
 - Modern switch eliminates fall-through bugs and allows switch to be used as a value-producing expression.
 
+## 6. Loop Constructs
+
+- for loop
+
+  - Use when iteration count is known.
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+```
+- while loop
+
+  - Use when termination depends on a condition.
+```java
+int i = 0;
+while (i < 5) {
+      System.out.println(i);
+      i++;
+}
+```
+- do-while loop
+
+  - Executes at least once, even if condition is false.
+```java
+int x = 10;
+do {
+      System.out.println("Runs once");
+} while (x < 5);
+```
+## 7. Common Interview Traps
+
+- Missing break in switch
+  - Causes unintended fall-through
+  - One of the most common Java bugs
+
+## Infinite loops
+```java
+for (int i = 0; i >= 0; i++) {
+// Never terminates
+}
+```
+## Modifying loop variable incorrectly
+```java
+for (int i = 0; i < 5; i--) {
+    // Infinite loop
+}
+```
+## Using == instead of .equals()
+```java
+if (name == "Java") { }   // ❌
+if ("Java".equals(name)) { } // ✔
+```
+## 8. Interview One-Liners (Memorize)
+- Java conditions must evaluate to boolean
+- && and || are short-circuit operators
+- Legacy switch falls through without break
+- Modern switch returns values
+- do-while executes at least once
+- Control flow bugs cause serious production issues
+
 
