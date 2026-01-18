@@ -45,4 +45,15 @@ System.out.println(++x); // increments first, then prints
 ```
 > Interview trap: Know when the increment happens.
 
+## 4. Relational and Equality Operators
+```java
+int a = 10;
+int b = 20;
+
+System.out.println(a < b);  // true
+System.out.println(a == b); // false
+```
+Important:
+-	== compares values for primitives
+-	== compares references for objects
 
