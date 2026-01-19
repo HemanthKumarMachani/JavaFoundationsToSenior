@@ -56,4 +56,30 @@ System.out.println(a == b); // false
 Important:
 -	== compares values for primitives
 -	== compares references for objects
+## 5. Logical vs Bitwise Operators
 
+- Logical operators (short-circuit)
+```java
+if (a > 0 && expensiveCheck()) { }
+```
+- && stops if left side is false
+- || stops if left side is true
+
+- Bitwise operators (no short-circuit)
+```java
+if (a > 0 & expensiveCheck()) { }
+```
+- Both sides always evaluated
+- Common OCP trick
+
+## 6. Short-Circuit Evaluation (Critical)
+```java
+int x = 0;
+if (x != 0 && 10 / x > 1) {
+        // safe, second condition never evaluated
+        }
+```
+- Why this matters:
+  -	Prevents NullPointerException
+  -	Prevents ArithmeticException
+  - Improves performance
