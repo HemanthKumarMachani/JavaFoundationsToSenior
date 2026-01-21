@@ -103,3 +103,37 @@ int max = (a > b) ? a : b;
 - Rules:
   -	Both branches must be compatible types
   -	Often nested incorrectly (avoid deep nesting)
+
+## 9. Operator Precedence (High-Value Interview Topic)
+
+Order (high → low):
+1.	Unary (++ -- !)
+2.	Multiplicative (* / %)
+3.	Additive (+ -)
+4.	Relational (< >)
+5.	Equality (== !=)
+6.	Logical AND (&&)
+7.	Logical OR (||)
+8.	Ternary (?:)
+9.	Assignment (=)
+
+Rule:
+
+When in doubt, use parentheses.
+
+## 10. Common Interview & OCP Traps
+
+- Trap 1: Precedence confusion
+```java
+int x = 5 + 3 * 2; // 11, not 16
+```
+- Trap 2: Increment confusion
+```java
+int x = 5;
+int y = x++ + ++x;
+```
+- Trap 3: Bitwise vs logical
+```java
+if (true | false) { }  // valid
+if (true || false) { } // also valid, but different behavior
+```
