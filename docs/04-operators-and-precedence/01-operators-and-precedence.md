@@ -137,3 +137,12 @@ int y = x++ + ++x;
 if (true | false) { }  // valid
 if (true || false) { } // also valid, but different behavior
 ```
+
+## 11. Interview One-Liners (Memorize)
+	•	&& and || short-circuit
+	•	& and | always evaluate both sides
+	•	++x increments before use
+	•	x++ increments after use
+	•	Integer division truncates
+	•	Operator precedence matters
+	•	Use parentheses for clarity
