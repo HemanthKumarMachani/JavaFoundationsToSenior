@@ -83,3 +83,23 @@ if (x != 0 && 10 / x > 1) {
   -	Prevents NullPointerException
   -	Prevents ArithmeticException
   - Improves performance
+
+## 7. Assignment Operators7. Assignment Operators
+```java
+int x = 10;
+x += 5;  // x = x + 5
+```
+- Trap:
+```java
+short s = 10;
+s += 1; // compiles
+s = s + 1; // does NOT compile
+```
+
+## 8. Ternary Operator (?:)
+```java
+int max = (a > b) ? a : b;
+```
+- Rules:
+  -	Both branches must be compatible types
+  -	Often nested incorrectly (avoid deep nesting)
