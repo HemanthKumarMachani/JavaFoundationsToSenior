@@ -75,9 +75,9 @@ This order is heavily tested in interviews and OCP.
 ## 6. Varargs (...)
 
 Varargs:
-•	Treated as arrays internally
-•	Must be the last parameter
-•	Only one varargs parameter allowed
+- Treated as arrays internally
+- Must be the last parameter
+- Only one varargs parameter allowed
 
 ```java
 void log(String... messages) { }
