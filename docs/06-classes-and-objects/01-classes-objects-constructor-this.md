@@ -180,3 +180,42 @@ If a subclass defines a static method with the same signature, it hides it.
 This is a common interview trick question:
 - overriding is runtime dispatch
 - static methods are chosen at compile time based on reference type
+
+## 10. Interview Traps & How to Explain Them
+
+**Trap A: Shadowing without this**
+```java
+class Person {
+String name;
+Person(String name) { name = name; } // bug
+}
+```
+This assigns parameter to itself. this.name = name; fixes it.
+
+**Trap B: Assuming default constructor exists**
+
+If you define Person(String name), new Person() will not compile.
+
+**Trap C: Initialization order confusion**
+
+People expect constructor body first. It’s not.
+
+**Trap D: static method “override”**
+
+Static methods are hidden, not overridden.
+
+⸻
+
+## 11. Interview Scripts (Say This)
+
+**Object creation**
+
+When I call new, the JVM allocates the object on the heap, runs superclass initialization first, then runs instance field initializers and initializer blocks, then runs the constructor body. The reference is stored on the stack.
+
+**Static vs instance**
+
+Instance fields are per-object; static fields are per-class. Static introduces global shared state and can cause concurrency and testing issues if overused.
+
+**this**
+
+this refers to the current object. It’s used to resolve shadowing and to chain constructors, where this(...) must be the first statement.
