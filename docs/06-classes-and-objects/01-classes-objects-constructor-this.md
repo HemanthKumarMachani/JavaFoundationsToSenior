@@ -96,3 +96,87 @@ A constructor is special because:
 ## 5. Default Constructor Rule (OCP Favorite)
 
 If you write no constructors, the compiler provides:
+```java
+void log(String... messages) { }
+```
+But if you define any constructor, the compiler does not generate a default one.
+
+Why this matters:
+•	Frameworks and serialization tools sometimes require a no-arg constructor
+•	Interviewers ask: “Why is my code not compiling when I removed the no-arg constructor?”
+
+⸻
+
+## 6. this Keyword: The Real Meaning
+
+this is a reference to the current object.
+It allows you to:
+1.	resolve shadowing:
+
+```java
+this.name = name;
+```
+2. call another constructor (constructor chaining):
+```java
+this("default");
+```
+> Important rule:	this(...) must be the first statement in the constructor
+
+Why the rule exists:
+- Object must be initialized in a predictable order
+- Prevents partial initialization before delegation
+
+⸻
+
+## 7. Constructor Chaining: this(...) vs super(...)
+
+**this(...)**
+
+Calls another constructor in the same class.
+
+**super(...)**
+
+Calls a constructor in the parent class.
+
+Rules:
+- The first statement must be either this(...) or super(...)
+- If you don’t write super(...), Java inserts super() automatically
+- If the parent has no no-arg constructor, you must call super(args...) explicitly
+
+**Interview trap:**
+
+“Why does my subclass not compile?”
+Usually: parent has no default constructor.
+
+⸻
+
+## 8. Initialization Order (Very High-Value Topic)
+
+This answers: “What runs first?”
+
+**Class loading time (once per class)**
+1.	static fields (in order)
+2.	static initialization blocks (in order)
+
+**Object creation time (every time you new)**
+3.	instance fields (in order)
+4.	instance initializer blocks (in order)
+5.	constructor body
+
+Then, remember inheritance:
+•	Superclass initialization happens before subclass initialization.
+
+**Senior explanation:**
+
+> Java guarantees a deterministic initialization order so objects don’t observe partially initialized state. That’s why constructor chaining and super calls have strict rules.
+
+⸻
+
+## 9. Static Methods: Not Overridden (Hidden)
+
+Static methods do not participate in runtime polymorphism.
+If a subclass defines a static method with the same signature, it hides it.
+
+This is a common interview trick question:
+- overriding is runtime dispatch
+- static methods are chosen at compile time based on reference type
