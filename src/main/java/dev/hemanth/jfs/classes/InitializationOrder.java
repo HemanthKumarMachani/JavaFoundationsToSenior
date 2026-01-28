@@ -29,7 +29,7 @@ public class InitializationOrder {
     }
 
     // ---- (3) Constructor: runs after instance initializers ----
-    public InitializationOrderDemo() {
+    public InitializationOrder() {
         log("5. constructor body");
     }
 
@@ -40,9 +40,9 @@ public class InitializationOrder {
 
     public static void main(String[] args) {
         log("---- Creating first object ----");
-        new InitializationOrderDemo();
+        new InitializationOrder();
 
         log("---- Creating second object ----");
-        new InitializationOrderDemo();
+        new InitializationOrder();
     }
 }
