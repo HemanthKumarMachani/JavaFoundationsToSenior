@@ -10,8 +10,8 @@ package dev.hemanth.jfs.inheritance;
 public class InheritanceBasics {
 
     static class Animal {
-        void eat() {
-            System.out.println("Animal eats");
+        void eat(Animal animal) {
+            System.out.println(animal.getClass().getName() +" eats" );
         }
     }
 
@@ -23,7 +23,7 @@ public class InheritanceBasics {
 
     public static void main(String[] args) {
         Dog d = new Dog();
-        d.eat();   // inherited behavior
+        d.eat(d);   // inherited behavior
         d.bark();  // specialized behavior
     }
 }
