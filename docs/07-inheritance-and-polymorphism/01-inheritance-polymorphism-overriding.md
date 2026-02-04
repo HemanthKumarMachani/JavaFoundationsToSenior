@@ -23,3 +23,16 @@ class Dog extends Animal { }
 **At runtime:**
 - A Dog object contains Animal state + Dog state
 - The JVM tracks the actual object type separately from the reference type
+## 2. Reference Type vs Object Type (Critical Concept)
+```java
+Animal a = new Dog();
+```
+There are two types involved:
+- Reference type → Animal (compile-time)
+- Object type → Dog (runtime)
+
+Why this matters:
+- Reference type controls what is accessible
+- Object type controls what actually executes
+
+This distinction explains almost every polymorphism interview question.
