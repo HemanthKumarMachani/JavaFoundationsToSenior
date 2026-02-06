@@ -36,3 +36,48 @@ Why this matters:
 - Object type controls what actually executes
 
 This distinction explains almost every polymorphism interview question.
+
+## 3. Polymorphism: Why It Exists
+
+Polymorphism allows:
+- Writing code against abstractions (parent types)
+- Plugging in different implementations without changing client code
+
+Example:
+
+```java
+void makeSound(Animal a) {
+    a.sound();
+}
+```
+The caller decides which subclass to pass:
+- Dog
+- Cat
+- Bird
+
+**Senior explanation you can say:**
+
+Polymorphism allows behavior to vary at runtime while keeping code stable and extensible.
+
+## 4. Method Overriding (Runtime Polymorphism)
+
+Method overriding means:
+- Same method signature
+- In subclass
+- Runtime decision
+
+```java
+class Animal {
+    void sound() { System.out.println("Animal sound"); }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() { System.out.println("Bark"); }
+}
+```
+
+```java
+Animal a = new Dog();
+a.sound(); // Bark
+```
