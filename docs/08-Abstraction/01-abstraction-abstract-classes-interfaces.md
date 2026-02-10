@@ -191,3 +191,27 @@ PaymentService service = new StripePaymentService();
 service.pay(100);
 ```
 Caller does not know or care about implementation details.
+
+## 10. Common Abstraction Mistakes (Senior Traps)
+
+- Over-abstraction (too many layers)
+- Leaking implementation details into interfaces
+- Using abstract classes where interfaces are better
+- Using inheritance where composition fits better
+- Treating interfaces as data holders
+
+⸻
+
+## 11. Interview Scripts (Say This Clearly)
+
+**What is abstraction?**
+
+> Abstraction is defining a contract that specifies what behavior is required, while hiding implementation details so the system can evolve independently.
+
+**Abstract class vs interface?**
+
+> Abstract classes model a base type with shared state and behavior. Interfaces model capabilities and support multiple inheritance.
+
+**Why interfaces over abstract classes in frameworks?**
+
+> Interfaces provide loose coupling, allow multiple inheritance, and make systems easier to extend and test.
