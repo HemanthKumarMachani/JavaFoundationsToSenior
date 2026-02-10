@@ -110,4 +110,84 @@ interface PaymentService {
     void pay(double amount);
 }
 ```
+**Key properties:**
+- No instance state (except constants)
+- Methods are implicitly public
+- Supports multiple inheritance
 
+⸻
+
+**Java 8+ interface evolution**
+
+Since Java 8, interfaces can have:
+- default methods (with implementation)
+- static methods
+- private helper methods (Java 9+)
+
+This allows:
+- Backward-compatible API evolution
+- Shared behavior without breaking implementations
+
+⸻
+
+## 6. Abstract Class vs Interface (Conceptual Difference)
+
+This is **not** about syntax.
+
+**Abstract class:**
+- Represents **what something is**
+- Models a base type
+- Allows shared state
+
+**Interface:**
+- Represents **what something can do**
+- Models a capability or role
+- Focuses on behavior, not state
+
+**Senior-level explanation:**
+
+> Abstract classes model inheritance of identity. Interfaces model inheritance of capability.
+
+⸻
+
+## 7. Multiple Inheritance: Why Interfaces Exist
+
+Java does not allow multiple inheritance of classes because:
+- Diamond problem
+- Ambiguous state resolution
+
+Interfaces avoid this by:
+- Allowing multiple inheritance of behavior
+- Enforcing explicit conflict resolution for default methods
+
+⸻
+
+## 8. Default Methods (Important Interview Topic)
+
+```java
+interface Logger {
+    default void log(String msg) {
+        System.out.println(msg);
+    }
+}
+```
+Why they exist:
+•	To evolve interfaces without breaking existing implementations
+•	To share behavior safely
+
+Conflict rule:
+- Class methods win over interface default methods
+- If two interfaces provide same default method → class must override
+
+⸻
+
+## 9. Abstraction + Polymorphism (How They Work Together)
+
+Abstraction enables polymorphism by:
+- Allowing code to depend on abstract types
+- Letting runtime choose implementation
+```java
+PaymentService service = new StripePaymentService();
+service.pay(100);
+```
+Caller does not know or care about implementation details.
