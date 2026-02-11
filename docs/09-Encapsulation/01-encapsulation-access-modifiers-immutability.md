@@ -40,5 +40,7 @@ Now your system has invalid data.
 
 With encapsulation:
 ```java
-
+setAge(int age) {
+    if (age < 0) throw exception;
+}
 ```
